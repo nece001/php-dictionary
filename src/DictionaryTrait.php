@@ -58,7 +58,7 @@ trait DictionaryTrait
             foreach ($key_names as $key_name) {
                 if (isset($data['key_name_index'][$key_name])) {
                     $index = $data['key_name_index'][$key_name];
-                    $result[$key_name][] = $data['dict'][$index];
+                    $result[$key_name] = $data['dict'][$index];
                 }
             }
         } else {
@@ -104,7 +104,7 @@ trait DictionaryTrait
         $kv = array();
         $address = array();
         $key_name_index = array();
-        $dict = array(0 => array('childs' => array(), 'key_name' => 'root', 'title' => ''));
+        $dict = array(0 => array('children' => array(), 'key_name' => 'root', 'title' => ''));
         $address[0] = &$dict[0];
         foreach ($list as $row) {
 
@@ -115,12 +115,12 @@ trait DictionaryTrait
             $value = $this->fetchValue($row);
 
             if (!isset($dict[$id])) {
-                $dict[$id] = array('childes' => array(), 'key_name' => $key_name, 'title' => $title);
+                $dict[$id] = array('children' => array(), 'key_name' => $key_name, 'title' => $title);
                 $address[$id] = &$dict[$id];
             }
 
             if (!isset($dict[$parent_id])) {
-                $dict[$parent_id] = array('childes' => array(), 'key_name' => '', 'title' => '');
+                $dict[$parent_id] = array('children' => array(), 'key_name' => '', 'title' => '');
                 $address[$parent_id] = &$dict[$parent_id];
             }
 
@@ -131,9 +131,10 @@ trait DictionaryTrait
 
             $address[$id]['title'] = $title;
             $address[$id]['key_name'] = $key_name;
-            $address[$parent_id]['childs'][] = array(
+            $address[$parent_id]['children'][] = array(
                 'value' => $value,
-                'title' => $title
+                'title' => $title,
+                'key_name' => $key_name
             );
         }
 
