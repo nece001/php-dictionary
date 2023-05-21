@@ -15,12 +15,6 @@
         }
     ],
     "require": {
-        "php": ">=5.4",
-        "nece001/php-category-tree": "dev-main"
-    },
-    "extra": {
-        "php-category-tree": {
-            "dev-main": "^0.0.x-dev"
-        }
+        "php": ">=5.4"
     }
 }
