@@ -20,7 +20,7 @@
     },
     "extra": {
         "php-category-tree": {
-            "dev-main": "^0.0.*"
+            "dev-main": "^0.0.x-dev"
         }
     }
 }
