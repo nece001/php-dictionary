@@ -135,7 +135,7 @@ class DictionaryLogic extends CategoryAbstract
 
     public function getValue($key_name)
     {
-        $query = $this->getModel()->where('key_name', $key_name);
+        $query = $this->getModel()->alias('a')->where('key_name', $key_name);
 
         return $query->find();
     }

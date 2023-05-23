@@ -2,7 +2,7 @@
 
 namespace Nece001\PhpDictionary\ThinkPHP\Model;
 
-use think\Model;
+use Nece001\PhpOrmModel\TP6Model;
 
 /**
  * 字典分组表
@@ -10,6 +10,6 @@ use think\Model;
  * @Author gjw
  * @DateTime 2023-05-23
  */
-class Dictionary extends Model
+class Dictionary extends TP6Model
 {
 }
